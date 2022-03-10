@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "2f4125df-5a8a-4aa1-9bfa-2d96f104553d": {
+      "ProjectGuid": "2f4125df-5a8a-4aa1-9bfa-2d96f104553d",
+      "DisplayName": "CardsManagerAPI2",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
