@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ConfirmBoxEvokeService, IConfirmBoxPublicResponse } from '@costlydeveloper/ngx-awesome-popup';
 import { ToastrService } from 'ngx-toastr';
 import { CardDetail } from '../shared/card-detail.model';
 import { CardDetailService } from '../shared/card-detail.service';
+import { UserModel } from '../shared/user-model';
 
 @Component({
   selector: 'app-card-details',
@@ -12,10 +14,21 @@ import { CardDetailService } from '../shared/card-detail.service';
 })
 export class CardDetailsComponent implements OnInit {
 
-  constructor(public service: CardDetailService, private toastr: ToastrService, private confirmBoxEvokeService: ConfirmBoxEvokeService) { }
+  constructor(public service: CardDetailService, private toastr: ToastrService, private confirmBoxEvokeService: ConfirmBoxEvokeService, private router: Router) { }
+
+      
+  userDetails: any;
 
   ngOnInit(): void {
     this.service.refreshList();
+    // this.service.getUserProfile().subscribe(
+    //   res => {
+    //     this.userDetails = res;
+    //   },
+    //   err => {
+    //     console.log(err);
+    //   },
+    // );
   }
 
   populateForm(selectedRecord: CardDetail)
@@ -46,6 +59,12 @@ export class CardDetailsComponent implements OnInit {
     }
     
   }
+
+  onLogout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/user/login']);
+  }
+
   confirmBox(id: number) {
     this.confirmBoxEvokeService
       .danger('Warning', 'Are you sure you want to delete this card?', 'Confirm', 'Cancel')
