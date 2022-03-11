@@ -11,7 +11,7 @@ A web app to manage user's bank cards
 4. open up a terminal in vs code and run 'npm-install' to install node_modules 
 5. now run 'ng-serve' to run front end 
 
-#Achievments 
+# Achievements 
 1. CRUD OPERATIONS
 2. sql server
 3. JWT Authentication
@@ -22,7 +22,7 @@ A web app to manage user's bank cards
 8. Angular components (mat-stepper, bootstrap, forms, toastr, popup ,navbar, ..etc)
 
 
-#Issues Faced
+# Issues Faced
 1. Unauthorized error upon fetching logged in user data 
 2. prevents from loading cards data for logged in user 
 3. prevents showing user name on navbar
